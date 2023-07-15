@@ -18,7 +18,9 @@ for i in range(0, N-1):
     while R[i] < N-1 and A[R[i]+1] - A[i] <= K:
         R[i] += 1
 
-    answer = 0
-    for i in range(0, N-1):
-        # 右端のインデックスから、自分のインデックスを引くことで、条件を満たす要素の数がわかる
-        answer += R[i] - i
+answer = 0
+for i in range(0, N-1):
+    # 右端のインデックスから、自分のインデックスを引くことで、条件を満たす要素の数がわかる
+    answer += (R[i] - i)
+
+print(answer)
