@@ -12,7 +12,7 @@ B = [ 0 ] * (D+2)
 for i in range(N):
 	B[L[i]] += 1
 	B[R[i]+1] -= 1
-        
+
 # 累積和をとる
 Answer = [ None ] * (D+2)
 Answer[0] = 0

@@ -9,7 +9,7 @@ for i in P:
         if i + j == K:
             ans = True
             break
-        
+
 if ans:
     print("Yes")
 else:

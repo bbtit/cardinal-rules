@@ -7,7 +7,7 @@ for i in A:
     if i == X:
         ans = True
         break
-    
+
 if ans:
     print("Yes")
 else:
