@@ -1,0 +1,221 @@
+{
+	"n=int(input())": {
+		"prefix": "n=",
+		"body": "n=int(input())"
+	},
+	"k=int(input())": {
+		"prefix": "k=",
+		"body": "k=int(input())"
+	},
+	"m=int(input())": {
+		"prefix": "m=",
+		"body": "m=int(input())"
+	},
+	"s=input()": {
+		"prefix": "s=",
+		"body": "s=input()"
+	},
+	"n,m=map(int,input().split())": {
+		"prefix": "n,m=",
+		"body": "n,m=map(int,input().split())"
+	},
+	"h,w=map(int,input().split())": {
+		"prefix": "h,w=",
+		"body": "h,w=map(int,input().split())"
+	},
+	"a=list(map(int,input().split()))": {
+		"prefix": "a=",
+		"body": "a=list(map(int,input().split()))"
+	},
+	"input()": {
+		"prefix": "inp",
+		"body": "input()"
+	},
+	"int(input())": {
+		"prefix": "ii",
+		"body": "int(input())"
+	},
+	"for i in range(n)": {
+		"prefix": "fo",
+		"body": "for i in range(n)"
+	},
+	"for k in range(m):": {
+		"prefix": "fom",
+		"body": "for j in range(m):"
+	},
+	"for i in range(w):": {
+		"prefix": "fow",
+		"body": "for i in range(w)"
+	},
+	"for i in range(h):": {
+		"prefix": "foh",
+		"body": "for i in range(h)"
+	},
+	"for i in range(q):": {
+		"prefix": "foq",
+		"body": "for i in range(q):"
+	},
+	"for i in range(t):": {
+		"prefix": "fot",
+		"body": "for _ in range(t):"
+	},
+	"for _": {
+		"prefix": "fo_",
+		"body": "for _ in range(n):"
+	},
+	"for _ in range(int(input)):": {
+		"prefix": "forii",
+		"body": "for _ in range(int(input())):"
+	},
+	"input().split()": {
+		"prefix": "is",
+		"body": "input().split()"
+	},
+	"map(int,input().split())": {
+		"prefix": "ma",
+		"body": "map(int,input().split())"
+	},
+	"map(lambda x:int(x)-1,input().split())": {
+		"prefix": "mala",
+		"body": "map(lambda x:int(x)-1,input().split())"
+	},
+	"list(map(int,input().split()))": {
+		"prefix": "li",
+		"body": "list(map(int,input().split()))"
+	},
+	"list(input())": {
+		"prefix": "liinp",
+		"body": "list(input())"
+	},
+	"lambda x:int(x)-1": {
+		"prefix": "la",
+		"body": "lambda x:int(x)-1"
+	},
+	"list(map(lambda x:int(x)-1,input().split()))": {
+		"prefix": "limala",
+		"body": "list(map(lambda x:int(x)-1,input().split()))"
+	},
+	"di=defaultdict()": {
+		"prefix": "di=",
+		"body": [
+			"from collections import defaultdict",
+			"di=defaultdict()"
+		]
+	},
+	"edge=": {
+		"prefix": "edge=",
+		"body": [
+			"from collections import defaultdict",
+			"edge=defaultdict(list)",
+			""
+		]
+	},
+	"deque": {
+		"prefix": "deque",
+		"body": [
+			"from collections import deque",
+			"que=deque()"
+		]
+	},
+	"c=Counter()": {
+		"prefix": "c=",
+		"body": [
+			"from collections import Counter",
+			"c=Counter()"
+		]
+	},
+	"heapq": {
+		"prefix": "heap",
+		"body": [
+			"from heapq import heapify,heappop,heappush",
+			""
+		]
+	},
+	"sys": {
+		"prefix": "sys",
+		"body": [
+			"import sys",
+			"sys.setrecursionlimit(10**6)"
+		]
+	},
+	"uf=": {
+		"prefix": "uf=",
+		"body": "from collections import defaultdict\nclass UnionFind():\n\tdef __init__(self, n):\n\t\tself.n = n\n\t\tself.parents = [-1] * n\n\n\tdef find(self, x):\n\t\tif self.parents[x] < 0:\n\t\t\treturn x\n\t\telse:\n\t\t\tself.parents[x] = self.find(self.parents[x])\n\t\t\treturn self.parents[x]\n\n\tdef union(self, x, y):\n\t\tx = self.find(x)\n\t\ty = self.find(y)\n\n\t\tif x == y:\n\t\t\treturn\n\n\t\tif self.parents[x] > self.parents[y]:\n\t\t\tx, y = y, x\n\n\t\tself.parents[x] += self.parents[y]\n\t\tself.parents[y] = x\n\n\tdef size(self, x):\n\t\treturn -self.parents[self.find(x)]\n\n\tdef same(self, x, y):\n\t\treturn self.find(x) == self.find(y)\n\n\tdef members(self, x):\n\t\troot = self.find(x)\n\t\treturn [i for i in range(self.n) if self.find(i) == root]\n\n\tdef roots(self):\n\t\treturn [i for i, x in enumerate(self.parents) if x < 0]\n\n\tdef group_count(self):\n\t\treturn len(self.roots())\n\n\tdef all_group_members(self):\n\t\tgroup_members = defaultdict(list)\n\t\tfor member in range(self.n):\n\t\t\tgroup_members[self.find(member)].append(member)\n\t\treturn group_members\n\nuf=UnionFind(n)"
+	},
+	// https://github.com/tatyam-prime/SortedSet/blob/main/SortedSet.py
+	"SortedSet": {
+		"prefix": "ss=",
+		"body": "import math\nfrom bisect import bisect_left, bisect_right\nfrom typing import Generic, Iterable, Iterator, TypeVar, Optional, List\nT = TypeVar('T')\n\nclass SortedSet(Generic[T]):\n\tBUCKET_RATIO = 50\n\tREBUILD_RATIO = 170\n\n\tdef _build(self, a=None) -> None:\n\t\t'Evenly divide `a` into buckets.'\n\t\tif a is None: a = list(self)\n\t\tsize = self.size = len(a)\n\t\tbucket_size = int(math.ceil(math.sqrt(size / self.BUCKET_RATIO)))\n\t\tself.a = [a[size * i // bucket_size : size * (i + 1) // bucket_size] for i in range(bucket_size)]\n\t\n\tdef __init__(self, a: Iterable[T] = []) -> None:\n\t\t'Make a new SortedSet from iterable. / O(N) if sorted and unique / O(N log N)'\n\t\ta = list(a)\n\t\tif not all(a[i] < a[i + 1] for i in range(len(a) - 1)):\n\t\t\ta = sorted(set(a))\n\t\tself._build(a)\n\n\tdef __iter__(self) -> Iterator[T]:\n\t\tfor i in self.a:\n\t\t\tfor j in i: yield j\n\n\tdef __reversed__(self) -> Iterator[T]:\n\t\tfor i in reversed(self.a):\n\t\t\tfor j in reversed(i): yield j\n\t\n\tdef __len__(self) -> int:\n\t\treturn self.size\n\t\n\tdef __repr__(self) -> str:\n\t\treturn 'SortedSet' + str(self.a)\n\t\n\tdef __str__(self) -> str:\n\t\ts = str(list(self))\n\t\treturn '{' + s[1 : len(s) - 1] + '}'\n\n\tdef _find_bucket(self, x: T) -> List[T]:\n\t\t'Find the bucket which should contain x. self must not be empty.'\n\t\tfor a in self.a:\n\t\t\tif x <= a[-1]: return a\n\t\treturn a\n\n\tdef __contains__(self, x: T) -> bool:\n\t\tif self.size == 0: return False\n\t\ta = self._find_bucket(x)\n\t\ti = bisect_left(a, x)\n\t\treturn i != len(a) and a[i] == x\n\n\tdef add(self, x: T) -> bool:\n\t\t'Add an element and return True if added. / O(√N)'\n\t\tif self.size == 0:\n\t\t\tself.a = [[x]]\n\t\t\tself.size = 1\n\t\t\treturn True\n\t\ta = self._find_bucket(x)\n\t\ti = bisect_left(a, x)\n\t\tif i != len(a) and a[i] == x: return False\n\t\ta.insert(i, x)\n\t\tself.size += 1\n\t\tif len(a) > len(self.a) * self.REBUILD_RATIO:\n\t\t\tself._build()\n\t\treturn True\n\n\tdef discard(self, x: T) -> bool:\n\t\t'Remove an element and return True if removed. / O(√N)'\n\t\tif self.size == 0: return False\n\t\ta = self._find_bucket(x)\n\t\ti = bisect_left(a, x)\n\t\tif i == len(a) or a[i] != x: return False\n\t\ta.pop(i)\n\t\tself.size -= 1\n\t\tif len(a) == 0: self._build()\n\t\treturn True\n\t\n\tdef lt(self, x: T) -> Optional[T]:\n\t\t'Find the largest element < x, or None if it does not exist.'\n\t\tfor a in reversed(self.a):\n\t\t\tif a[0] < x:\n\t\t\t\treturn a[bisect_left(a, x) - 1]\n\n\tdef le(self, x: T) -> Optional[T]:\n\t\t'Find the largest element <= x, or None if it does not exist.'\n\t\tfor a in reversed(self.a):\n\t\t\tif a[0] <= x:\n\t\t\t\treturn a[bisect_right(a, x) - 1]\n\n\tdef gt(self, x: T) -> Optional[T]:\n\t\t'Find the smallest element > x, or None if it does not exist.'\n\t\tfor a in self.a:\n\t\t\tif a[-1] > x:\n\t\t\t\treturn a[bisect_right(a, x)]\n\n\tdef ge(self, x: T) -> Optional[T]:\n\t\t'Find the smallest element >= x, or None if it does not exist.'\n\t\tfor a in self.a:\n\t\t\tif a[-1] >= x:\n\t\t\t\treturn a[bisect_left(a, x)]\n\t\n\tdef __getitem__(self, x: int) -> T:\n\t\t'Return the x-th element, or IndexError if it does not exist.'\n\t\tif x < 0: x += self.size\n\t\tif x < 0: raise IndexError\n\t\tfor a in self.a:\n\t\t\tif x < len(a): return a[x]\n\t\t\tx -= len(a)\n\t\traise IndexError\n\t\n\tdef index(self, x: T) -> int:\n\t\t'Count the number of elements < x.'\n\t\tans = 0\n\t\tfor a in self.a:\n\t\t\tif a[-1] >= x:\n\t\t\t\treturn ans + bisect_left(a, x)\n\t\t\tans += len(a)\n\t\treturn ans\n\n\tdef index_right(self, x: T) -> int:\n\t\t'Count the number of elements <= x.'\n\t\tans = 0\n\t\tfor a in self.a:\n\t\t\tif a[-1] > x:\n\t\t\t\treturn ans + bisect_right(a, x)\n\t\t\tans += len(a)\n\t\treturn ans\n\n"
+	},
+	// https://github.com/tatyam-prime/SortedSet/blob/main/SortedMultiset.py
+	"SortedMultiset": {
+		"prefix": "sms=",
+		"body": "import math\nfrom bisect import bisect_left, bisect_right, insort\nfrom typing import Generic, Iterable, Iterator, TypeVar, Optional, List\nT = TypeVar('T')\n\nclass SortedMultiset(Generic[T]):\n\tBUCKET_RATIO = 50\n\tREBUILD_RATIO = 170\n\n\tdef _build(self, a=None) -> None:\n\t\t'Evenly divide `a` into buckets.'\n\t\tif a is None: a = list(self)\n\t\tsize = self.size = len(a)\n\t\tbucket_size = int(math.ceil(math.sqrt(size / self.BUCKET_RATIO)))\n\t\tself.a = [a[size * i // bucket_size : size * (i + 1) // bucket_size] for i in range(bucket_size)]\n\t\n\tdef __init__(self, a: Iterable[T] = []) -> None:\n\t\t'Make a new SortedMultiset from iterable. / O(N) if sorted / O(N log N)'\n\t\ta = list(a)\n\t\tif not all(a[i] <= a[i + 1] for i in range(len(a) - 1)):\n\t\t\ta = sorted(a)\n\t\tself._build(a)\n\n\tdef __iter__(self) -> Iterator[T]:\n\t\tfor i in self.a:\n\t\t\tfor j in i: yield j\n\n\tdef __reversed__(self) -> Iterator[T]:\n\t\tfor i in reversed(self.a):\n\t\t\tfor j in reversed(i): yield j\n\t\n\tdef __len__(self) -> int:\n\t\treturn self.size\n\t\n\tdef __repr__(self) -> str:\n\t\treturn 'SortedMultiset' + str(self.a)\n\t\n\tdef __str__(self) -> str:\n\t\ts = str(list(self))\n\t\treturn '{' + s[1 : len(s) - 1] + '}'\n\n\tdef _find_bucket(self, x: T) -> List[T]:\n\t\t'Find the bucket which should contain x. self must not be empty.'\n\t\tfor a in self.a:\n\t\t\tif x <= a[-1]: return a\n\t\treturn a\n\n\tdef __contains__(self, x: T) -> bool:\n\t\tif self.size == 0: return False\n\t\ta = self._find_bucket(x)\n\t\ti = bisect_left(a, x)\n\t\treturn i != len(a) and a[i] == x\n\n\tdef count(self, x: T) -> int:\n\t\t'Count the number of x.'\n\t\treturn self.index_right(x) - self.index(x)\n\n\tdef add(self, x: T) -> None:\n\t\t'Add an element. / O(√N)'\n\t\tif self.size == 0:\n\t\t\tself.a = [[x]]\n\t\t\tself.size = 1\n\t\t\treturn\n\t\ta = self._find_bucket(x)\n\t\tinsort(a, x)\n\t\tself.size += 1\n\t\tif len(a) > len(self.a) * self.REBUILD_RATIO:\n\t\t\tself._build()\n\n\tdef discard(self, x: T) -> bool:\n\t\t'Remove an element and return True if removed. / O(√N)'\n\t\tif self.size == 0: return False\n\t\ta = self._find_bucket(x)\n\t\ti = bisect_left(a, x)\n\t\tif i == len(a) or a[i] != x: return False\n\t\ta.pop(i)\n\t\tself.size -= 1\n\t\tif len(a) == 0: self._build()\n\t\treturn True\n\n\tdef lt(self, x: T) -> Optional[T]:\n\t\t'Find the largest element < x, or None if it does not exist.'\n\t\tfor a in reversed(self.a):\n\t\t\tif a[0] < x:\n\t\t\t\treturn a[bisect_left(a, x) - 1]\n\n\tdef le(self, x: T) -> Optional[T]:\n\t\t'Find the largest element <= x, or None if it does not exist.'\n\t\tfor a in reversed(self.a):\n\t\t\tif a[0] <= x:\n\t\t\t\treturn a[bisect_right(a, x) - 1]\n\n\tdef gt(self, x: T) -> Optional[T]:\n\t\t'Find the smallest element > x, or None if it does not exist.'\n\t\tfor a in self.a:\n\t\t\tif a[-1] > x:\n\t\t\t\treturn a[bisect_right(a, x)]\n\n\tdef ge(self, x: T) -> Optional[T]:\n\t\t'Find the smallest element >= x, or None if it does not exist.'\n\t\tfor a in self.a:\n\t\t\tif a[-1] >= x:\n\t\t\t\treturn a[bisect_left(a, x)]\n\t\n\tdef __getitem__(self, x: int) -> T:\n\t\t'Return the x-th element, or IndexError if it does not exist.'\n\t\tif x < 0: x += self.size\n\t\tif x < 0: raise IndexError\n\t\tfor a in self.a:\n\t\t\tif x < len(a): return a[x]\n\t\t\tx -= len(a)\n\t\traise IndexError\n\n\tdef index(self, x: T) -> int:\n\t\t'Count the number of elements < x.'\n\t\tans = 0\n\t\tfor a in self.a:\n\t\t\tif a[-1] >= x:\n\t\t\t\treturn ans + bisect_left(a, x)\n\t\t\tans += len(a)\n\t\treturn ans\n\n\tdef index_right(self, x: T) -> int:\n\t\t'Count the number of elements <= x.'\n\t\tans = 0\n\t\tfor a in self.a:\n\t\t\tif a[-1] > x:\n\t\t\t\treturn ans + bisect_right(a, x)\n\t\t\tans += len(a)\n\t\treturn ans\n"
+	},
+	"INF": {
+		"prefix": "INF",
+		"body": "INF=float('inf')"
+	},
+	"mod": {
+		"prefix": "mod",
+		"body": "mod=998244353"
+	},
+	"MOD": {
+		"prefix": "MOD",
+		"body": "MOD=1000000007"
+	},
+	"inside": {
+		"prefix": "inside",
+		"body": [
+			"def inside(y,x):",
+			"\treturn 0<=y<h and 0<=x<w"
+		]
+	},
+	"yes": {
+		"prefix": "yes",
+		"body": "print('Yes')"
+	},
+	"no": {
+		"prefix": "no",
+		"body": "print('No')"
+	},
+	"abc": {
+		"prefix": "abc",
+		"body": "abc = 'abcdefghijklmnopqrstuvwxyz'"
+	},
+	"ABC": {
+		"prefix": "ABC",
+		"body": "ABC = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'"
+	},
+	"bit_count": {
+		"prefix": "bit_c",
+		"body": [
+			"def bit_count(self):",
+			"\treturn bin(self).count('1')"
+		]
+	},
+	"st=": {
+		"prefix": "st=",
+		"body": [
+			"# セグメント木\nclass SegTree():\n\tn=1\n\tsize=1\n\tlog=2\n\td=[0]\n\tsegfunc=None\n\tide_ele=10**15\n\tdef __init__(self,V,segfunc,ide_ele):\n\t\t'''\n\t\tV: 初期値の配列\n\t\tsegfunc: 区間クエリで使用する二項演算\n\t\tide_ele: 単位元\n\t\t'''\n\t\tself.n=len(V)\n\t\tself.segfunc=segfunc\n\t\tself.ide_ele=ide_ele\n\t\tself.log=(self.n-1).bit_length()\n\t\tself.size=1<<self.log\n\t\tself.d=[ide_ele for i in range(2*self.size)]\n\t\tfor i in range(self.n):\n\t\t\tself.d[self.size+i]=V[i]\n\t\tfor i in range(self.size-1,0,-1):\n\t\t\tself.__update(i)\n\tdef set(self,p,x):\n\t\t'''\n\t\tp番目の値をxに更新します。\n\t\tp: 更新する位置のインデックス\n\t\tx: 更新する値\n\t\t'''\n\t\tassert 0<=p and p<self.n\n\t\tp+=self.size\n\t\tself.d[p]=x\n\t\tfor i in range(1,self.log+1):\n\t\t\tself.__update(p>>i)\n\tdef get(self,p):\n\t\t'''\n\t\tp番目の要素を取得します。\n\t\tp: 取得する位置のインデックス\n\t\t'''\n\t\tassert 0<=p and p<self.n\n\t\treturn self.d[p+self.size]\n\tdef prod(self,l,r):\n\t\t'''\n\t\t区間[l, r)に対するクエリを実行し、結果を返します。\n\t\tl: クエリの開始インデックス\n\t\tr: クエリの終了インデックス\n\t\t'''\n\t\tassert 0<=l and l<=r and r<=self.n\n\t\tsml=self.ide_ele\n\t\tsmr=self.ide_ele\n\t\tl+=self.size\n\t\tr+=self.size\n\t\twhile(l<r):\n\t\t\tif (l&1):\n\t\t\t\tsml=self.segfunc(sml,self.d[l])\n\t\t\t\tl+=1\n\t\t\tif (r&1):\n\t\t\t\tsmr=self.segfunc(self.d[r-1],smr)\n\t\t\t\tr-=1\n\t\t\tl>>=1\n\t\t\tr>>=1\n\t\treturn self.segfunc(sml,smr)\n\tdef all_prod(self):\n\t\t'''\n\t\tセグメント木全体に対するクエリを実行し、結果を返します。\n\t\t'''\n\t\treturn self.d[1]\n\tdef max_right(self,l,f):\n\t\t'''\n\t\t条件fを満たすlからの最大の右端rを求めます。\n\t\tl: 左端のインデックス\n\t\tf: 条件を満たす関数\n\t\t'''\n\t\tassert 0<=l and l<=self.n\n\t\tassert f(self.ide_ele)\n\t\tif l==self.n:\n\t\t\treturn self.n\n\t\tl+=self.size\n\t\tsm=self.ide_ele\n\t\twhile(1):\n\t\t\twhile(l%2==0):\n\t\t\t\tl>>=1\n\t\t\tif not(f(self.segfunc(sm,self.d[l]))):\n\t\t\t\twhile(l<self.size):\n\t\t\t\t\tl=2*l\n\t\t\t\t\tif f(self.segfunc(sm,self.d[l])):\n\t\t\t\t\t\tsm=self.segfunc(sm,self.d[l])\n\t\t\t\t\t\tl+=1\n\t\t\t\treturn l-self.size\n\t\t\tsm=self.segfunc(sm,self.d[l])\n\t\t\tl+=1\n\t\t\tif (l&-l)==l:\n\t\t\t\tbreak\n\t\treturn self.n\n\tdef min_left(self,r,f):\n\t\t'''\n\t\t条件fを満たすrからの最小の左端lを求めます。\n\t\tr: 右端のインデックス\n\t\tf: 条件を満たす関数\n\t\t'''\n\t\tassert 0<=r and r<=self.n\n\t\tassert f(self.ide_ele)\n\t\tif r==0:\n\t\t\treturn 0\n\t\tr+=self.size\n\t\tsm=self.ide_ele\n\t\twhile(1):\n\t\t\tr-=1\n\t\t\twhile(r>1 and (r%2)):\n\t\t\t\tr>>=1\n\t\t\tif not(f(self.segfunc(self.d[r],sm))):\n\t\t\t\twhile(r<self.size):\n\t\t\t\t\tr=(2*r+1)\n\t\t\t\t\tif f(self.segfunc(self.d[r],sm)):\n\t\t\t\t\t\tsm=self.segfunc(self.d[r],sm)\n\t\t\t\t\t\tr-=1\n\t\t\t\treturn r+1-self.size\n\t\t\tsm=self.segfunc(self.d[r],sm)\n\t\t\tif (r& -r)==r:\n\t\t\t\tbreak\n\t\treturn 0\n\tdef __update(self,k):\n\t\t'''\n\t\tk番目のノードを更新します。\n\t\tk: 更新するノードのインデックス\n\t\t'''\n\t\tself.d[k]=self.segfunc(self.d[2*k],self.d[2*k+1])\n\tdef __str__(self):\n\t\treturn str([self.get(i) for i in range(self.n)])\n\nINF = float('inf')\n# 最小:min(x,y) 最大:max(x,y) 区間和:x+y 区間積:x*y 最大公約数 math.gcd(x,y)\ndef segfunc(x, y):\n\treturn \n\n# 最小:INF 最大:-INF 区間和:0 区間積:1 最大公約数 0\nide_ele = \n\n"
+		]
+	},
+	"lst=": {
+		"prefix": "lst=",
+		"body": [
+			"# https://github.com/shakayami/ACL-for-python/wiki/lazysegtree\n# 遅延セグ木\nclass LazySegTree():\n\tdef update(self,k):self.d[k]=self.op(self.d[2*k],self.d[2*k+1])\n\tdef all_apply(self,k,f):\n\t\tself.d[k]=self.mapping(f,self.d[k])\n\t\tif (k<self.size):self.lz[k]=self.composition(f,self.lz[k])\n\tdef push(self,k):\n\t\tself.all_apply(2*k,self.lz[k])\n\t\tself.all_apply(2*k+1,self.lz[k])\n\t\tself.lz[k]=self.identity\n\tdef __init__(self,V,OP,E,MAPPING,COMPOSITION,ID):\n\t\tself.n=len(V)\n\t\tself.log=(self.n-1).bit_length()\n\t\tself.size=1<<self.log\n\t\tself.d=[E for i in range(2*self.size)]\n\t\tself.lz=[ID for i in range(self.size)]\n\t\tself.e=E\n\t\tself.op=OP\n\t\tself.mapping=MAPPING\n\t\tself.composition=COMPOSITION\n\t\tself.identity=ID\n\t\tfor i in range(self.n):self.d[self.size+i]=V[i]\n\t\tfor i in range(self.size-1,0,-1):self.update(i)\n\tdef set(self,p,x):\n\t\tassert 0<=p and p<self.n\n\t\tp+=self.size\n\t\tfor i in range(self.log,0,-1):self.push(p>>i)\n\t\tself.d[p]=x\n\t\tfor i in range(1,self.log+1):self.update(p>>i)\n\tdef get(self,p):\n\t\tassert 0<=p and p<self.n\n\t\tp+=self.size\n\t\tfor i in range(self.log,0,-1):self.push(p>>i)\n\t\treturn self.d[p]\n\tdef prod(self,l,r):\n\t\tassert 0<=l and l<=r and r<=self.n\n\t\tif l==r:return self.e\n\t\tl+=self.size\n\t\tr+=self.size\n\t\tfor i in range(self.log,0,-1):\n\t\t\tif (((l>>i)<<i)!=l):self.push(l>>i)\n\t\t\tif (((r>>i)<<i)!=r):self.push(r>>i)\n\t\tsml,smr=self.e,self.e\n\t\twhile(l<r):\n\t\t\tif l&1:\n\t\t\t\tsml=self.op(sml,self.d[l])\n\t\t\t\tl+=1\n\t\t\tif r&1:\n\t\t\t\tr-=1\n\t\t\t\tsmr=self.op(self.d[r],smr)\n\t\t\tl>>=1\n\t\t\tr>>=1\n\t\treturn self.op(sml,smr)\n\tdef all_prod(self):return self.d[1]\n\tdef apply_point(self,p,f):\n\t\tassert 0<=p and p<self.n\n\t\tp+=self.size\n\t\tfor i in range(self.log,0,-1):self.push(p>>i)\n\t\tself.d[p]=self.mapping(f,self.d[p])\n\t\tfor i in range(1,self.log+1):self.update(p>>i)\n\tdef apply(self,l,r,f):\n\t\tassert 0<=l and l<=r and r<=self.n\n\t\tif l==r:return\n\t\tl+=self.size\n\t\tr+=self.size\n\t\tfor i in range(self.log,0,-1):\n\t\t\tif (((l>>i)<<i)!=l):self.push(l>>i)\n\t\t\tif (((r>>i)<<i)!=r):self.push((r-1)>>i)\n\t\tl2,r2=l,r\n\t\twhile(l<r):\n\t\t\tif (l&1):\n\t\t\t\tself.all_apply(l,f)\n\t\t\t\tl+=1\n\t\t\tif (r&1):\n\t\t\t\tr-=1\n\t\t\t\tself.all_apply(r,f)\n\t\t\tl>>=1\n\t\t\tr>>=1\n\t\tl,r=l2,r2\n\t\tfor i in range(1,self.log+1):\n\t\t\tif (((l>>i)<<i)!=l):self.update(l>>i)\n\t\t\tif (((r>>i)<<i)!=r):self.update((r-1)>>i)\n\tdef max_right(self,l,g):\n\t\tassert 0<=l and l<=self.n\n\t\tassert g(self.e)\n\t\tif l==self.n:return self.n\n\t\tl+=self.size\n\t\tfor i in range(self.log,0,-1):self.push(l>>i)\n\t\tsm=self.e\n\t\twhile(1):\n\t\t\twhile(l%2==0):l>>=1\n\t\t\tif not(g(self.op(sm,self.d[l]))):\n\t\t\t\twhile(l<self.size):\n\t\t\t\t\tself.push(l)\n\t\t\t\t\tl=(2*l)\n\t\t\t\t\tif (g(self.op(sm,self.d[l]))):\n\t\t\t\t\t\tsm=self.op(sm,self.d[l])\n\t\t\t\t\t\tl+=1\n\t\t\t\treturn l-self.size\n\t\t\tsm=self.op(sm,self.d[l])\n\t\t\tl+=1\n\t\t\tif (l&-l)==l:break\n\t\treturn self.n\n\tdef min_left(self,r,g):\n\t\tassert (0<=r and r<=self.n)\n\t\tassert g(self.e)\n\t\tif r==0:return 0\n\t\tr+=self.size\n\t\tfor i in range(self.log,0,-1):self.push((r-1)>>i)\n\t\tsm=self.e\n\t\twhile(1):\n\t\t\tr-=1\n\t\t\twhile(r>1 and (r%2)):r>>=1\n\t\t\tif not(g(self.op(self.d[r],sm))):\n\t\t\t\twhile(r<self.size):\n\t\t\t\t\tself.push(r)\n\t\t\t\t\tr=(2*r+1)\n\t\t\t\t\tif g(self.op(self.d[r],sm)):\n\t\t\t\t\t\tsm=self.op(self.d[r],sm)\n\t\t\t\t\t\tr-=1\n\t\t\t\treturn r+1-self.size\n\t\t\tsm=self.op(self.d[r],sm)\n\t\t\tif (r&-r)==r:break\n\t\treturn 0\n\ndef operate(a,b):\n\t'''二項演算'''\n\treturn \ndef mapping(f,x):\n\t'''ノードの更新方法'''\n\treturn \ndef composition(f,g):\n\t'''更新で使うパラメータの合成方法'''\n\treturn \n\nV=[0]*n\nE=0\nID=0\nst=LazySegTree(V,operate,E,mapping,composition,ID)\n"
+		]
+	},
+	"walk": {
+		"prefix": "walk",
+		"body": [
+			"walk=[",
+			"\t(1,0),",
+			"\t(-1,0),",
+			"\t(0,1),",
+			"\t(0,-1),",
+			"]",
+			""
+		]
+	}
+}
